@@ -1,11 +1,7 @@
-const { saveUser, getUsers, clearUsers } = require('../src/userService');
+const { saveUser, getUsers } = require('../src/userService');
 
-beforeEach(() => {
-  clearUsers();
-});
-
-test('saves a user to the service', async () => {
-  await saveUser({ name: 'Alice' });
+test('saves a user to the service', () => {
+  saveUser({ name: 'Alice' });
   expect(getUsers().length).toBe(1);
 });
 
